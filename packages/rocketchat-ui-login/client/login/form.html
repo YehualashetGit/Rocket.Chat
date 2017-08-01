@@ -41,6 +41,41 @@
 						{{/if}}
 						<!--Registration form is-->
 
+						{{#if state 'register'}}
+							<div class="input-line">
+								<label for="name">{{namePlaceholder}}</label>
+								<div>
+									<input type="text" name='name' id="name" dir="auto" />
+									<div class="input-error"></div>
+								</div>
+							</div>
+							<div class="input-line">
+								<label for="email">{{_ "Email"}}</label>
+								<div>
+									<input type="email" name='email' id="email" />
+									<div class="input-error"></div>
+								</div>
+							</div>
+
+							{{> customFieldsForm hideFromForm=true}}
+
+							<div class="input-line">
+								<label for="pass">{{passwordPlaceholder}}</label>
+								<div>
+									<input type="password" name='pass' id="pass" />
+									<div class="input-error"></div>
+								</div>
+							</div>
+							{{#if requirePasswordConfirmation}}
+								<div class="input-line">
+									<label for="confirm-pass">{{_ "Confirm_password"}}</label>
+									<div>
+										<input type="password" name='confirm-pass' id="confirm-pass" />
+										<div class="input-error"></div>
+									</div>
+								</div>
+							{{/if}}
+						{{/if}}
 
 						{{#if state 'forgot-password' 'email-verification'}}
 							<div class="input-line">
